@@ -1,0 +1,959 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fbfbfd;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  height: 44px;
+}
+
+.nav-links > li > a,
+.nav-links > li > a > i {
+  color: #1d1d1f;
+  text-decoration: none;
+  font-size: 12px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links > li > a:hover {
+  opacity: 1;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: fixed;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(242, 242, 247, 0.98);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  padding: 30px 0 40px;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.has-dropdown:hover .dropdown,
+.dropdown:hover {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.has-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px; /* bridges the gap */
+}
+
+
+.dropdown-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.dropdown-col.large {
+  min-width: 220px;
+}
+
+.dropdown-label {
+  font-size: 12px;
+  color: #6e6e73;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.dropdown-col a {
+  color: #1d1d1f;
+  text-decoration: none;
+  font-size: 12px;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.dropdown-col a:hover {
+  color: #0071e3;
+}
+
+.dropdown-big {
+  font-size: 17px !important;
+  font-weight: 600;
+  margin-bottom: 6px !important;
+  color: #1d1d1f !important;
+}
+
+.dropdown-big:hover {
+  color: #0071e3 !important;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  height: 600px;
+  background-image: url("../images/home/iphone-lineup.jpg");
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  padding-top: 40px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.05);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 22px;
+  margin: 10px 0 20px;
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-links a {
+  color: #2997ff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* =========================
+   PROMO
+========================= */
+.promo {
+  height: 500px;
+  background-image: url("../images/home/Fathers-day.jpg");
+  background-size: cover;
+  background-position: center;
+
+  margin-top: 12px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.promo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.05);
+}
+
+.promo-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.promo-title {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.promo-text {
+  font-size: 20px;
+  margin: 10px 0 20px;
+}
+
+.promo-links a {
+  color: #2997ff;
+  text-decoration: none;
+}
+
+/* =========================
+   COLLEGE
+========================= */
+.college {
+  height: 580px;
+  background-image: url("../images/home/apple-for-college.jpg");
+  background-size: cover;
+  background-position: center;
+
+  margin-top: 12px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.college::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.05);
+}
+
+.college-content {
+  position: relative;
+  z-index: 2;
+}
+
+.college-title {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.college-text {
+  font-size: 24px;
+  margin: 10px 0 20px;
+}
+
+.college-links a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+.product-grid {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.product {
+  flex: 1;
+  height: 580px;
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.product-content {
+  position: relative;
+  z-index: 2;
+}
+
+.product-content h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.product-content p {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.product-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-links a {
+  color: #2997ff;
+  text-decoration: none;
+}
+/* MacBook Air */
+.macbook-air {
+  background-image: url("../images/home/macbookair.jpg");
+  color: #1d1d1f;
+}
+
+.macbook-air::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+}
+
+/* iPad Air */
+.ipad-air {
+  background-image: url("../images/home/ipadair.jpg");
+  color: #1d1d1f;
+}
+
+.ipad-air::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+}
+
+/* MacBook Pro */
+.macbook-pro {
+  background-image: url("../images/home/macbookpro.jpg");
+  color: white;
+}
+
+.macbook-pro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* Apple Watch */
+.apple-watch {
+  background-image: url("../images/home/watchseries11.jpg");
+}
+
+.apple-watch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.2);
+}
+
+.watch-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.watch-logo span {
+  color: #d84a3a;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Apple Card */
+.apple-card {
+  background-image: url("../images/home/card.jpg");
+}
+
+.apple-card::before,
+.trade-in::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+}
+
+.trade-in {
+  background-image: url("../images/home/trade-in.jpg");
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+.entertainment-title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1d1d1f;
+  padding: 40px 0 20px;
+  background-color: #fbfbfd;
+}
+.tv-carousel {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 12px;
+  background-color: #fbfbfd;
+}
+
+.tv-track {
+  display: flex;
+  transition: transform 0.8s ease;
+}
+
+.tv-item {
+  flex: 0 0 100%;
+}
+
+.tv-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+/* DOTS */
+.dots {
+  text-align: center;
+  padding: 10px 0 16px;
+}
+
+.dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  margin: 4px;
+  background: #bbb;
+  cursor: pointer;
+}
+
+.dots button.active {
+  background: #1d1d1f;
+}
+
+/* SMALL CARDS ROW */
+.tv-cards {
+  display: flex;
+  gap: 12px;
+  padding: 10px 20px 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.tv-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.tv-cards:active {
+  cursor: grabbing;
+}
+
+.tv-card {
+  flex: 0 0 240px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f5f5f7;
+  scroll-snap-align: start;
+}
+
+.tv-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.tv-card-info {
+  padding: 12px 14px 16px;
+}
+
+.tv-card-badge {
+  font-size: 11px;
+  color: #6e6e73;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tv-card-info p {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.tv-card-btn {
+  display: inline-block;
+  background: white;
+  color: #1d1d1f;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  border: 1px solid #d2d2d7;
+  transition: background 0.2s;
+}
+
+.tv-card-btn:hover {
+  background: #e8e8ed;
+}
+
+/* DOTS */
+.dots {
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+.dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  margin: 4px;
+  background: #bbb;
+  cursor: pointer;
+}
+
+.dots button.active {
+  background: #1d1d1f;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #f5f5f7;
+  padding: 40px 0 20px;
+  font-size: 12px;
+  color: #6e6e73;
+}
+
+.footer hr {
+  border: none;
+  border-top: 1px solid #d2d2d7;
+  margin: 20px 0;
+}
+
+.upper-text-container {
+  line-height: 1.6;
+}
+
+.upper-text-container a {
+  color: #0071e3;
+  text-decoration: none;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.footer-grid h4 {
+  color: #1d1d1f;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.footer-grid h4:first-child {
+  margin-top: 0;
+}
+
+.footer-grid a {
+  display: block;
+  color: #6e6e73;
+  text-decoration: none;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
+}
+
+.footer-more-ways {
+  color: #6e6e73;
+  line-height: 1.6;
+}
+
+.footer-more-ways a {
+  color: #0071e3;
+  text-decoration: none;
+}
+
+.footer-more-ways a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-legal a {
+  color: #6e6e73;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+.footer-legal span {
+  color: #d2d2d7;
+}
+
+/* =========================
+   PILL BUTTONS
+========================= */
+.hero-links a,
+.promo-links a,
+.college-links a,
+.product-links a {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 980px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* First link = solid blue */
+.hero-links a:first-child,
+.promo-links a:first-child,
+.college-links a:first-child,
+.product-links a:first-child {
+  background-color: #0071e3;
+  color: white;
+}
+
+.hero-links a:first-child:hover,
+.promo-links a:first-child:hover,
+.college-links a:first-child:hover,
+.product-links a:first-child:hover {
+  background-color: #0077ed;
+}
+
+/* Second link = outlined */
+.hero-links a:last-child,
+.promo-links a:last-child,
+.college-links a:last-child,
+.product-links a:last-child {
+  background-color: transparent;
+  color: #0071e3;
+  border: 1px solid #0071e3;
+}
+
+.hero-links a:last-child:hover,
+.promo-links a:last-child:hover,
+.college-links a:last-child:hover,
+.product-links a:last-child:hover {
+  background-color: #0071e3;
+  color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* TABLET (max 1024px) */
+@media (max-width: 1024px) {
+  .container,
+  .nav-container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* TABLET SMALL (max 768px) */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.95);
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    gap: 16px;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #1d1d1f;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  .logo-only {
+    display: flex;
+    align-items: center;
+  }
+
+  /* hide all nav items except logo on mobile */
+  .nav-links > li {
+    width: 100%;
+  }
+
+  .nav-links > li > a {
+    font-size: 16px !important;
+    opacity: 1;
+  }
+
+  /* hide dropdowns on mobile */
+  .dropdown {
+    display: none !important;
+  }
+
+  /* HERO */
+  .hero {
+    height: 400px;
+    padding-top: 30px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  /* PROMO */
+  .promo {
+    height: 380px;
+    padding-top: 30px;
+  }
+
+  .promo-title {
+    font-size: 28px;
+  }
+
+  .promo-text {
+    font-size: 16px;
+  }
+
+  /* COLLEGE */
+  .college {
+    height: 400px;
+    padding-top: 30px;
+  }
+
+  .college-title {
+    font-size: 32px;
+  }
+
+  .college-text {
+    font-size: 18px;
+  }
+
+  /* PRODUCT GRID */
+  .product-grid {
+    flex-direction: column;
+  }
+
+  .product {
+    height: 400px;
+  }
+
+  .product-content h2 {
+    font-size: 28px;
+  }
+
+  .product-content p {
+    font-size: 16px;
+  }
+
+  /* ENTERTAINMENT */
+  .entertainment-title {
+    font-size: 32px;
+    padding: 24px 0 16px;
+  }
+
+  .tv-item img {
+    height: 300px;
+  }
+
+  .tv-card {
+    flex: 0 0 200px;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+  }
+}
+
+/* MOBILE (max 480px) */
+@media (max-width: 480px) {
+
+  /* HERO */
+  .hero {
+    height: 320px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .hero-links a,
+  .promo-links a,
+  .college-links a,
+  .product-links a {
+    font-size: 13px;
+    padding: 7px 16px;
+  }
+
+  /* PROMO */
+  .promo {
+    height: 300px;
+  }
+
+  .promo-title {
+    font-size: 24px;
+  }
+
+  /* COLLEGE */
+  .college {
+    height: 320px;
+  }
+
+  .college-title {
+    font-size: 26px;
+  }
+
+  /* PRODUCT */
+  .product {
+    height: 320px;
+  }
+
+  /* ENTERTAINMENT */
+  .entertainment-title {
+    font-size: 26px;
+  }
+
+  .tv-item img {
+    height: 220px;
+  }
+
+  .tv-card {
+    flex: 0 0 170px;
+  }
+
+  .tv-card img {
+    height: 110px;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-more-ways {
+    font-size: 11px;
+  }
+}
