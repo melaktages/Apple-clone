@@ -5,25 +5,23 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <title>Apple Clone</title>
   <link rel='stylesheet' href='css/style.css'>
-  <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <header class="navbar">
   <div class="nav-container">
     
   
-  <a href="#" class="logo-only" style="display:none;">
+    <a href="#" class="logo-only" style="display:none;">
     <i class="fa-brands fa-apple" style="font-size:18px;"></i>
-  </a>
-  <button class="hamburger" id="hamburger" style="display:none;">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+    </a>
+    <input type="checkbox" id="nav-toggle">
+   <label class="hamburger" for="nav-toggle">
+    <span></span><span></span><span></span>
+   </label>
 
   
-</div>
+  </div>
     <ul class="nav-links">
       <li class="logo-link">
         <a href="#"><i class="fa-brands fa-apple"></i></a>
@@ -537,7 +535,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <section class="tv-carousel">
   <h2 class="entertainment-title">Endless entertainment.</h2>
-
+    <input type="radio" name="slide" id="slide1" checked>
+<input type="radio" name="slide" id="slide2">
+<input type="radio" name="slide" id="slide3">
+<input type="radio" name="slide" id="slide4">
+<input type="radio" name="slide" id="slide5">
+<input type="radio" name="slide" id="slide6">
+<input type="radio" name="slide" id="slide7">
+<input type="radio" name="slide" id="slide8">
   <!-- BIG SLIDES -->
   <div class="tv-track">
     <div class="tv-item"><img src="images/home/mls.jpg" alt="MLS"></div>
@@ -548,9 +553,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="tv-item"><img src="images/home/capefear.jpg" alt="Cape Fear"></div>
     <div class="tv-item"><img src="images/home/music.jpg" alt="Music"></div>
     <div class="tv-item"><img src="images/home/f1.jpg" alt="F1"></div>
-  </div>
-  <div class="dots"></div>
-
+  
+  
+</div>
+<div class="dots">
+  <label for="slide1"></label>
+  <label for="slide2"></label>
+  <label for="slide3"></label>
+  <label for="slide4"></label>
+  <label for="slide5"></label>
+  <label for="slide6"></label>
+  <label for="slide7"></label>
+  <label for="slide8"></label>
+</div>
   <!-- SMALL CARDS ROW (independent, drag to scroll) -->
   <div class="tv-cards">
 
@@ -783,93 +798,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
   </div>
 </footer>
- <script>
-window.addEventListener("load", () => {
-  const track = document.querySelector(".tv-track");
-  const items = document.querySelectorAll(".tv-item");
-  const dotsContainer = document.querySelector(".dots");
 
-  let current = 0;
-
-  items.forEach((_, index) => {
-    const dot = document.createElement("button");
-    dotsContainer.appendChild(dot);
-    dot.addEventListener("click", () => {
-      current = index;
-      updateSlider();
-      resetAuto();
-    });
-  });
-
-  const dots = document.querySelectorAll(".dots button");
-
-  function updateSlider() {
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[current].classList.add("active");
-  }
-
-  function nextSlide() {
-    current = (current + 1) % items.length;
-    updateSlider();
-  }
-
-  let interval = setInterval(nextSlide, 3000);
-
-  function resetAuto() {
-    clearInterval(interval);
-    interval = setInterval(nextSlide, 3000);
-  }
-
-  // drag to scroll cards
-  const cards = document.querySelector(".tv-cards");
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  cards.addEventListener("mousedown", (e) => {
-    isDown = true;
-    startX = e.pageX - cards.offsetLeft;
-    scrollLeft = cards.scrollLeft;
-  });
-
-  cards.addEventListener("mouseleave", () => isDown = false);
-  cards.addEventListener("mouseup", () => isDown = false);
-  cards.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - cards.offsetLeft;
-    const walk = (x - startX) * 2;
-    cards.scrollLeft = scrollLeft - walk;
-  });
-
-  updateSlider();
-});
-// Hamburger toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.querySelector(".nav-links");
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth <= 768) {
-    hamburger.style.display = "flex";
-    document.querySelector(".logo-only").style.display = "flex";
-  } else {
-    hamburger.style.display = "none";
-    document.querySelector(".logo-only").style.display = "none";
-    navLinks.classList.remove("open");
-  }
-});
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
-
-// trigger on load
-if (window.innerWidth <= 768) {
-  hamburger.style.display = "flex";
-  document.querySelector(".logo-only").style.display = "flex";
-}
-
-</script>
 </body>
 </html>

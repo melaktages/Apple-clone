@@ -557,6 +557,42 @@ body {
 .dots button.active {
   background: #1d1d1f;
 }
+#nav-toggle { display: none; }
+
+#nav-toggle:checked ~ .nav-links { display: flex; }
+
+/* carousel */
+.tv-carousel input[type="radio"] { display: none; }
+
+.tv-track { width: 800%; }
+.tv-item  { flex: 0 0 12.5%; }
+
+#slide1:checked ~ .tv-track { transform: translateX(0%); }
+#slide2:checked ~ .tv-track { transform: translateX(-12.5%); }
+#slide3:checked ~ .tv-track { transform: translateX(-25%); }
+#slide4:checked ~ .tv-track { transform: translateX(-37.5%); }
+#slide5:checked ~ .tv-track { transform: translateX(-50%); }
+#slide6:checked ~ .tv-track { transform: translateX(-62.5%); }
+#slide7:checked ~ .tv-track { transform: translateX(-75%); }
+#slide8:checked ~ .tv-track { transform: translateX(-87.5%); }
+
+.dots label {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin: 4px;
+  background: #bbb;
+  cursor: pointer;
+}
+
+#slide1:checked ~ .dots label[for="slide1"],
+#slide2:checked ~ .dots label[for="slide2"],
+#slide3:checked ~ .dots label[for="slide3"],
+#slide4:checked ~ .dots label[for="slide4"],
+#slide5:checked ~ .dots label[for="slide5"],
+#slide6:checked ~ .dots label[for="slide6"],
+#slide7:checked ~ .dots label[for="slide7"],
+#slide8:checked ~ .dots label[for="slide8"] { background: #1d1d1f; }
 
 /* =========================
    FOOTER
